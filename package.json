@@ -12,8 +12,7 @@
     "babel-polyfill": "^6.8.0",
     "babel-runtime": "^6.6.1",
     "react": "^15.0.2",
-    "react-dom": "^15.0.2",
-    "react-router": "^2.4.0"
+    "react-dom": "^15.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.8.0",

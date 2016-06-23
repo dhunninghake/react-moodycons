@@ -3,7 +3,7 @@ import React from 'react';
 export default props => {
   return (
     <div>
-      <div>{props.children}</div>
+      <h1>Moodycons!</h1>
     </div>
   )
 }
