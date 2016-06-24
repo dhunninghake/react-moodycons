@@ -10,8 +10,6 @@ export default class IconWrapper extends Component {
         <Icon 
           text={icon.text}
           icon={icon.paths}
-          width={50}
-          height={50}
         />
       );
     });

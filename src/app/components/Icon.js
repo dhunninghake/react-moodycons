@@ -2,30 +2,27 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Icon extends Component {
   static propTypes = {
-    text:    PropTypes.string.isRequired,
     icon:    PropTypes.object.isRequired,
+    text:    PropTypes.string,
     width:   PropTypes.number,
     height:  PropTypes.number,
-    style:   PropTypes.array,
-    fill:    PropTypes.string
+    style:   PropTypes.array
   }
 
   static defaultProps = {
-    width: 23,
-    height: 23
+    width: 50,
+    height: 50
   }
 
   render() {
     return (
       <div>
         <svg 
-          viewBox='0 0 23 23'
           width={this.props.width} 
           height={this.props.height} 
           style={this.props.style}
-          fill={this.props.fill}
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1">
+          viewBox='0 0 25 25'
+          xmlns="http://www.w3.org/2000/svg">
           {this.props.icon}
         </svg>
         <h5>{this.props.text}</h5>
