@@ -1,2 +1,2 @@
 # moodycons
-React icon component for emoji mood icons
+React SVG component for emoji mood icons
