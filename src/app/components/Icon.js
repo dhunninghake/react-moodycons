@@ -1,5 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 
+const styles = {
+  display: 'inline-block',
+  margin: '0 2rem'
+};
+
 export default class Icon extends Component {
   static propTypes = {
     icon:    PropTypes.object.isRequired,
@@ -16,7 +21,7 @@ export default class Icon extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles}>
         <svg 
           width={this.props.width} 
           height={this.props.height} 
