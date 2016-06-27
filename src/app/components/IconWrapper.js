@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import icons from '../lib/icons';
 import Icon from './Icon';
 
+const styles = {
+  boxSizing: 'border-box',
+  paddingLeft: '30%',
+  
+};
+
 export default class IconWrapper extends Component {
 
   renderIcons() {
@@ -17,7 +23,7 @@ export default class IconWrapper extends Component {
 
   render() {
     return (
-      <div>{this.renderIcons()}</div>
+      <div style={styles}>{this.renderIcons()}</div>
     );
   }
 }

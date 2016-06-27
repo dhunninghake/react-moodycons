@@ -20371,12 +20371,17 @@
 
 	var _IconWrapper2 = _interopRequireDefault(_IconWrapper);
 
+	var _Sidebar = __webpack_require__(258);
+
+	var _Sidebar2 = _interopRequireDefault(_Sidebar);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = function (props) {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
+	    _react2.default.createElement(_Sidebar2.default, null),
 	    _react2.default.createElement(_IconWrapper2.default, null)
 	  );
 	};
@@ -20426,6 +20431,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var styles = {
+	  boxSizing: 'border-box',
+	  paddingLeft: '30%'
+
+	};
+
 	var IconWrapper = function (_Component) {
 	  (0, _inherits3.default)(IconWrapper, _Component);
 
@@ -20449,7 +20460,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { style: styles },
 	        this.renderIcons()
 	      );
 	    }
@@ -22147,6 +22158,51 @@
 	    _react2.default.createElement('path', { d: 'M12.3 7.2L11.3 11C11.1 11.6 10.5 12 10 12L6 12C5.4 12 4.9 11.6 4.7 11.1L3.5 7.2' }),
 	    _react2.default.createElement('path', { d: 'M9.1 15.4C9.1 17.3 10.6 18.8 12.5 18.8 14.3 18.8 15.8 17.3 15.8 15.4' })
 	  )
+	}, {
+	  text: 'winking',
+	  paths: _react2.default.createElement(
+	    'g',
+	    { fill: 'none' },
+	    _react2.default.createElement('circle', { cx: '12.4', cy: '12.4', r: '10.4', stroke: '#222' }),
+	    _react2.default.createElement('path', { d: 'M7.5 11C7.6 10.9 7.8 10.6 8.1 10.4 8.3 10.2 8.5 10.1 8.7 10 8.9 9.9 9 9.9 9 9.9 9 9.9 9.3 10 9.5 10.3 9.6 10.3 9.7 10.4 9.7 10.4 9.9 10.6 10.1 10.7 10.2 10.8 10.3 10.9 10.4 11 10.4 11 10.6 11.2 10.9 11.2 11.1 11 11.3 10.8 11.3 10.5 11.1 10.3 11.1 10.3 11 10.2 10.9 10.1 10.7 10 10.5 9.8 10.4 9.7 10.3 9.6 10.2 9.5 10.2 9.5 9.7 9.1 9.3 8.9 9 8.9 8.8 8.9 8.5 9 8.3 9.1 8 9.2 7.7 9.4 7.4 9.7 7.3 9.8 7.1 10 6.9 10.1 6.8 10.2 6.8 10.3 6.7 10.4 6.6 10.6 6.6 10.9 6.8 11.1 7 11.2 7.3 11.2 7.5 11L7.5 11Z', fill: '#222' }),
+	    _react2.default.createElement('path', { d: 'M14.2 11.1L18.2 11.1C18.5 11.1 18.7 10.9 18.7 10.6 18.7 10.4 18.5 10.1 18.2 10.1L14.2 10.1C14 10.1 13.7 10.4 13.7 10.6 13.7 10.9 14 11.1 14.2 11.1L14.2 11.1Z', fill: '#222' }),
+	    _react2.default.createElement('path', { d: 'M9.1 15.4C9.1 17.3 10.6 18.8 12.5 18.8 14.3 18.8 15.8 17.3 15.8 15.4', stroke: '#222' }),
+	    _react2.default.createElement('path', { d: 'M14.7 10.9L15.7 9.9C15.9 9.7 15.9 9.4 15.7 9.2 15.5 9 15.2 9 15 9.2L14 10.2C13.8 10.4 13.8 10.7 14 10.9 14.2 11.1 14.5 11.1 14.7 10.9L14.7 10.9Z', fill: '#222' })
+	  )
+	}, {
+	  text: 'heart eyes',
+	  paths: _react2.default.createElement(
+	    'g',
+	    { fill: 'none', stroke: '#222' },
+	    _react2.default.createElement('circle', { cx: '12.4', cy: '12.4', r: '10.4' }),
+	    _react2.default.createElement(
+	      'g',
+	      { transform: 'translate(8.904235 10.504235)rotate(-15)' },
+	      _react2.default.createElement('path', { d: 'M-0.4 2.4L2.4-0.5' }),
+	      _react2.default.createElement('path', { d: 'M0.2 2.2L-2.6-0.5' }),
+	      _react2.default.createElement('path', { d: 'M2.4-0.4C2.6-0.7 2.8-1 2.8-1.4 2.8-2.2 2.1-2.9 1.3-2.9 0.5-2.9-0.1-2.2-0.1-1.4' }),
+	      _react2.default.createElement('path', { d: 'M-0.1-1.4C-0.1-2.2-0.7-2.9-1.5-2.9 -2.3-2.9-3-2.2-3-1.4 -3-1-2.8-0.7-2.6-0.4' })
+	    ),
+	    _react2.default.createElement(
+	      'g',
+	      { transform: 'translate(16.074234 10.5)rotate(15)' },
+	      _react2.default.createElement('path', { d: 'M-0.4 2.4L2.4-0.5' }),
+	      _react2.default.createElement('path', { d: 'M0.2 2.2L-2.6-0.5' }),
+	      _react2.default.createElement('path', { d: 'M2.4-0.4C2.6-0.7 2.8-1 2.8-1.4 2.8-2.2 2.1-2.9 1.3-2.9 0.5-2.9-0.1-2.2-0.1-1.4' }),
+	      _react2.default.createElement('path', { d: 'M-0.1-1.4C-0.1-2.2-0.7-2.9-1.5-2.9 -2.3-2.9-3-2.2-3-1.4 -3-1-2.8-0.7-2.6-0.4' })
+	    ),
+	    _react2.default.createElement('path', { d: 'M9.7 15.7C9.7 17.2 10.9 18.5 12.5 18.5 14 18.5 15.2 17.2 15.2 15.7' })
+	  )
+	}, {
+	  text: 'happy',
+	  paths: _react2.default.createElement(
+	    'g',
+	    { fill: 'none' },
+	    _react2.default.createElement('circle', { cx: '12.4', cy: '12.4', r: '10.4', stroke: '#222' }),
+	    _react2.default.createElement('path', { d: 'M5.9 13.3C5.9 13.3 5.8 13.4 5.8 13.5 5.8 17.1 8.8 20 12.3 20 15.9 20 18.8 17.1 18.8 13.5 18.8 13.5 18.8 13.4 18.8 13.4L18.8 13.4 18.8 13.4 18.8 13.4M19.1 13C17.2 14 14.9 14.6 12.5 14.6 10 14.6 7.6 14 5.6 12.8M18.8 13.4L18.8 13.4', stroke: '#222' }),
+	    _react2.default.createElement('path', { d: 'M14.5 11C14.6 10.9 14.8 10.6 15.1 10.4 15.3 10.2 15.5 10.1 15.7 10 15.9 9.9 16 9.9 16 9.9 16 9.9 16.3 10 16.5 10.3 16.6 10.3 16.7 10.4 16.7 10.4 16.9 10.6 17.1 10.7 17.2 10.8 17.3 10.9 17.4 11 17.4 11 17.6 11.2 17.9 11.2 18.1 11 18.3 10.8 18.3 10.5 18.1 10.3 18.1 10.3 18 10.2 17.9 10.1 17.7 10 17.5 9.8 17.4 9.7 17.3 9.6 17.2 9.5 17.2 9.5 16.7 9.1 16.3 8.9 16 8.9 15.8 8.9 15.5 9 15.3 9.1 15 9.2 14.7 9.4 14.4 9.7 14.3 9.8 14.1 10 13.9 10.1 13.8 10.2 13.8 10.3 13.7 10.4 13.6 10.6 13.6 10.9 13.8 11.1 14 11.2 14.3 11.2 14.5 11L14.5 11Z', fill: '#222' }),
+	    _react2.default.createElement('path', { d: 'M7.5 11C7.6 10.9 7.8 10.6 8.1 10.4 8.3 10.2 8.5 10.1 8.7 10 8.9 9.9 9 9.9 9 9.9 9 9.9 9.3 10 9.5 10.3 9.6 10.3 9.7 10.4 9.7 10.4 9.9 10.6 10.1 10.7 10.2 10.8 10.3 10.9 10.4 11 10.4 11 10.6 11.2 10.9 11.2 11.1 11 11.3 10.8 11.3 10.5 11.1 10.3 11.1 10.3 11 10.2 10.9 10.1 10.7 10 10.5 9.8 10.4 9.7 10.3 9.6 10.2 9.5 10.2 9.5 9.7 9.1 9.3 8.9 9 8.9 8.8 8.9 8.5 9 8.3 9.1 8 9.2 7.7 9.4 7.4 9.7 7.3 9.8 7.1 10 6.9 10.1 6.8 10.2 6.8 10.3 6.7 10.4 6.6 10.6 6.6 10.9 6.8 11.1 7 11.2 7.3 11.2 7.5 11L7.5 11Z', fill: '#222' })
+	  )
 	}];
 
 /***/ },
@@ -22187,8 +22243,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var styles = {
-	  display: 'inline-block',
-	  margin: '0 2rem'
+	  float: 'left',
+	  padding: '0 2rem',
+	  width: '25%'
 	};
 
 	var Icon = function (_Component) {
@@ -22238,6 +22295,80 @@
 	  height: 50
 	};
 	exports.default = Icon;
+
+/***/ },
+/* 258 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _getPrototypeOf = __webpack_require__(170);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(196);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(197);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(201);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(248);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var styles = {
+	  position: 'fixed',
+	  top: 0,
+	  left: 0,
+	  width: '30%',
+	  height: '100%',
+	  borderRight: '1px solid black',
+	  backgroundColor: 'white'
+	};
+
+	var Sidebar = function (_Component) {
+	  (0, _inherits3.default)(Sidebar, _Component);
+
+	  function Sidebar() {
+	    (0, _classCallCheck3.default)(this, Sidebar);
+	    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Sidebar).apply(this, arguments));
+	  }
+
+	  (0, _createClass3.default)(Sidebar, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { style: styles },
+	        _react2.default.createElement(
+	          'h1',
+	          null,
+	          'Moodycons'
+	        )
+	      );
+	    }
+	  }]);
+	  return Sidebar;
+	}(_react.Component);
+
+	exports.default = Sidebar;
 
 /***/ }
 /******/ ]);

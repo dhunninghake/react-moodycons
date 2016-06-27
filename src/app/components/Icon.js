@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 
 const styles = {
-  display: 'inline-block',
-  margin: '0 2rem'
+  float: 'left',
+  padding: '0 2rem',
+  width: '25%'
 };
 
 export default class Icon extends Component {
