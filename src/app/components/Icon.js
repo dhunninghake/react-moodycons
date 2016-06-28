@@ -11,8 +11,7 @@ export default class Icon extends Component {
     icon:    PropTypes.object.isRequired,
     text:    PropTypes.string,
     width:   PropTypes.number,
-    height:  PropTypes.number,
-    style:   PropTypes.array
+    height:  PropTypes.number
   }
 
   static defaultProps = {
@@ -25,10 +24,10 @@ export default class Icon extends Component {
       <div style={styles}>
         <svg 
           width={this.props.width} 
-          height={this.props.height} 
-          style={this.props.style}
+          height={this.props.height}
           viewBox='0 0 25 25'
-          xmlns="http://www.w3.org/2000/svg">
+          fill='currentColor'
+          xmlns='http://www.w3.org/2000/svg'>
           {this.props.icon}
         </svg>
         <h5>{this.props.text}</h5>

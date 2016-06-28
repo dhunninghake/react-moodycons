@@ -15,7 +15,7 @@ export default class IconWrapper extends Component {
       return (
         <Icon 
           text={icon.text}
-          icon={icon.paths}
+          icon={icon.path}
         />
       );
     });
