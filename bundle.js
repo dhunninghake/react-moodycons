@@ -20451,7 +20451,7 @@
 	      return _icons2.default.map(function (icon) {
 	        return _react2.default.createElement(_Icon2.default, {
 	          text: icon.text,
-	          icon: icon.paths
+	          icon: icon.path
 	        });
 	      });
 	    }
@@ -22016,14 +22016,7 @@
 
 	exports.default = [{
 	  text: 'grinning',
-	  paths: _react2.default.createElement(
-	    'g',
-	    { fill: 'none' },
-	    _react2.default.createElement('circle', { cx: '12.4', cy: '12.4', r: '10.4', stroke: '#222' }),
-	    _react2.default.createElement('path', { d: 'M18.8 13C18.8 13.2 18.8 13.3 18.8 13.5 18.8 17.1 15.9 20 12.3 20 8.8 20 5.8 17.1 5.8 13.5 5.8 13.3 5.9 13.2 5.9 13L18.8 13Z', stroke: '#222' }),
-	    _react2.default.createElement('path', { d: 'M7.3 10L10.3 10C10.6 10 10.8 9.8 10.8 9.5 10.8 9.2 10.6 9 10.3 9L7.3 9C7.1 9 6.8 9.2 6.8 9.5 6.8 9.8 7.1 10 7.3 10L7.3 10Z', fill: '#222' }),
-	    _react2.default.createElement('path', { d: 'M14.3 10L17.5 10C17.7 10 18 9.8 18 9.5 18 9.2 17.7 9 17.5 9L14.3 9C14.1 9 13.8 9.2 13.8 9.5 13.8 9.8 14.1 10 14.3 10L14.3 10Z', fill: '#222' })
-	  )
+	  path: _react2.default.createElement('path', { d: 'M12.4 23.3C18.5 23.3 23.3 18.5 23.3 12.4 23.3 6.4 18.5 1.5 12.4 1.5 6.4 1.5 1.5 6.4 1.5 12.4 1.5 18.5 6.4 23.3 12.4 23.3ZM18.3 13C18.3 13.2 18.3 13.3 18.3 13.5 18.3 16.8 15.7 19.5 12.3 19.5 9 19.5 6.3 16.8 6.3 13.5 6.3 13.3 6.4 13.2 6.4 13L5.9 13 5.9 13.5 18.8 13.5 18.8 13 18.3 13ZM12.4 22.3C6.9 22.3 2.5 17.9 2.5 12.4 2.5 6.9 6.9 2.5 12.4 2.5 17.9 2.5 22.3 6.9 22.3 12.4 22.3 17.9 17.9 22.3 12.4 22.3ZM19.3 13L19.3 12.5 18.8 12.5 5.9 12.5 5.4 12.5 5.4 13C5.4 13.1 5.3 13.3 5.3 13.5 5.3 17.4 8.5 20.5 12.3 20.5 16.2 20.5 19.3 17.4 19.3 13.5 19.3 13.3 19.3 13.1 19.3 13ZM7.3 10L10.3 10C10.6 10 10.8 9.8 10.8 9.5 10.8 9.2 10.6 9 10.3 9L7.3 9C7.1 9 6.8 9.2 6.8 9.5 6.8 9.8 7.1 10 7.3 10ZM14.3 10L17.5 10C17.7 10 18 9.8 18 9.5 18 9.2 17.7 9 17.5 9L14.3 9C14.1 9 13.8 9.2 13.8 9.5 13.8 9.8 14.1 10 14.3 10Z' })
 	}, {
 	  text: 'grimacing',
 	  paths: _react2.default.createElement(
@@ -22267,8 +22260,8 @@
 	          {
 	            width: this.props.width,
 	            height: this.props.height,
-	            style: this.props.style,
 	            viewBox: '0 0 25 25',
+	            fill: 'currentColor',
 	            xmlns: 'http://www.w3.org/2000/svg' },
 	          this.props.icon
 	        ),
@@ -22287,8 +22280,7 @@
 	  icon: _react.PropTypes.object.isRequired,
 	  text: _react.PropTypes.string,
 	  width: _react.PropTypes.number,
-	  height: _react.PropTypes.number,
-	  style: _react.PropTypes.array
+	  height: _react.PropTypes.number
 	};
 	Icon.defaultProps = {
 	  width: 50,
