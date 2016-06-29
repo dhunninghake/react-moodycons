@@ -1,11 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 
-const styles = {
-  float: 'left',
-  padding: '0 2rem',
-  width: '25%'
-};
-
 export default class Icon extends Component {
   static propTypes = {
     icon:    PropTypes.object.isRequired,
@@ -21,7 +15,7 @@ export default class Icon extends Component {
 
   render() {
     return (
-      <div style={styles}>
+      <div>
         <svg 
           width={this.props.width} 
           height={this.props.height}
