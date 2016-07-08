@@ -1,6 +1,6 @@
 {
   "name": "react-moodycons",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React svg component for Moodycons",
   "main": "moodycons.js",
   "scripts": {
