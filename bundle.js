@@ -20493,7 +20493,7 @@
 	        return _react2.default.createElement(
 	          'div',
 	          { style: _this2.combinedIconStyles() },
-	          _react2.default.createElement(_Icon2.default, { text: icon, path: _icons2.default[icon] })
+	          _react2.default.createElement(_Icon2.default, { name: icon })
 	        );
 	      });
 	    }
@@ -22348,20 +22348,13 @@
 
 /***/ },
 /* 273 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	exports.default = {
 	  grinning: 'M12.4 23.3C18.5 23.3 23.3 18.5 23.3 12.4 23.3 6.4 18.5 1.5 12.4 1.5 6.4 1.5 1.5 6.4 1.5 12.4 1.5 18.5 6.4 23.3 12.4 23.3ZM18.3 13C18.3 13.2 18.3 13.3 18.3 13.5 18.3 16.8 15.7 19.5 12.3 19.5 9 19.5 6.3 16.8 6.3 13.5 6.3 13.3 6.4 13.2 6.4 13L5.9 13 5.9 13.5 18.8 13.5 18.8 13 18.3 13ZM12.4 22.3C6.9 22.3 2.5 17.9 2.5 12.4 2.5 6.9 6.9 2.5 12.4 2.5 17.9 2.5 22.3 6.9 22.3 12.4 22.3 17.9 17.9 22.3 12.4 22.3ZM19.3 13L19.3 12.5 18.8 12.5 5.9 12.5 5.4 12.5 5.4 13C5.4 13.1 5.3 13.3 5.3 13.5 5.3 17.4 8.5 20.5 12.3 20.5 16.2 20.5 19.3 17.4 19.3 13.5 19.3 13.3 19.3 13.1 19.3 13ZM7.3 10L10.3 10C10.6 10 10.8 9.8 10.8 9.5 10.8 9.2 10.6 9 10.3 9L7.3 9C7.1 9 6.8 9.2 6.8 9.5 6.8 9.8 7.1 10 7.3 10ZM14.3 10L17.5 10C17.7 10 18 9.8 18 9.5 18 9.2 17.7 9 17.5 9L14.3 9C14.1 9 13.8 9.2 13.8 9.5 13.8 9.8 14.1 10 14.3 10Z',
 	  grimacing: 'M12.4 23.3C18.5 23.3 23.3 18.5 23.3 12.4 23.3 6.4 18.5 1.5 12.4 1.5 6.4 1.5 1.5 6.4 1.5 12.4 1.5 18.5 6.4 23.3 12.4 23.3ZM12.4 22.3C6.9 22.3 2.5 17.9 2.5 12.4 2.5 6.9 6.9 2.5 12.4 2.5 17.9 2.5 22.3 6.9 22.3 12.4 22.3 17.9 17.9 22.3 12.4 22.3ZM7.7 10.2C7.8 10.1 8 9.9 8.2 9.7 8.4 9.6 8.6 9.4 8.7 9.4 8.8 9.3 8.9 9.3 8.9 9.3 8.9 9.3 9.1 9.4 9.3 9.6 9.3 9.6 9.4 9.7 9.4 9.7 9.7 9.9 9.9 10.1 10 10.2 10.2 10.4 10.5 10.4 10.7 10.2 10.9 10 10.9 9.7 10.7 9.5 10.5 9.4 10.3 9.1 10.1 8.9 10 8.9 10 8.8 9.9 8.8 9.5 8.5 9.2 8.3 8.9 8.3 8.7 8.3 8.5 8.4 8.3 8.5 8 8.6 7.8 8.7 7.6 8.9 7.3 9.2 7.1 9.4 7 9.5 6.8 9.7 6.8 10.1 7 10.2 7.2 10.4 7.6 10.4 7.7 10.2ZM15.2 9.7C15.4 9.6 15.6 9.4 15.7 9.4 15.8 9.3 15.9 9.3 15.9 9.3 15.9 9.3 16.1 9.4 16.3 9.6 16.3 9.6 16.4 9.7 16.4 9.7 16.7 9.9 16.9 10.1 17 10.2 17.2 10.4 17.5 10.4 17.7 10.2 17.9 10 17.9 9.7 17.7 9.5 17.5 9.4 17.3 9.1 17.1 8.9 17 8.9 17 8.8 16.9 8.8 16.5 8.5 16.2 8.3 15.9 8.3 15.7 8.3 15.5 8.4 15.3 8.5 15 8.6 14.8 8.7 14.6 8.9 14.3 9.2 14.1 9.4 14 9.5 13.8 9.7 13.8 10.1 14 10.2 14.2 10.4 14.6 10.4 14.7 10.2 14.8 10.1 15 9.9 15.2 9.7ZM5.8 15.5C5.8 16.8 6.9 18 8.3 18L16.4 18C17.8 18 18.9 16.8 18.9 15.5 18.9 14.1 17.8 13 16.4 13L8.3 13C6.9 13 5.8 14.1 5.8 15.5ZM6.8 15.5C6.8 14.6 7.4 14 8.3 14L16.4 14C17.2 14 17.9 14.6 17.9 15.5 17.9 16.3 17.2 17 16.4 17L8.3 17C7.4 17 6.8 16.3 6.8 15.5Z',
@@ -22458,6 +22451,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _icons = __webpack_require__(273);
+
+	var _icons2 = _interopRequireDefault(_icons);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Icon = function (_Component) {
@@ -22479,10 +22476,10 @@
 	          {
 	            width: this.props.width,
 	            height: this.props.height,
+	            fill: this.props.fill,
 	            viewBox: '0 0 25 25',
-	            fill: 'currentColor',
 	            xmlns: 'http://www.w3.org/2000/svg' },
-	          _react2.default.createElement('path', { d: this.props.path })
+	          _react2.default.createElement('path', { d: _icons2.default[this.props.name] })
 	        ),
 	        _react2.default.createElement(
 	          'h5',
@@ -22496,14 +22493,16 @@
 	}(_react.Component);
 
 	Icon.propTypes = {
-	  text: _react.PropTypes.string.isRequired,
-	  path: _react.PropTypes.string,
+	  name: _react.PropTypes.string.isRequired,
 	  width: _react.PropTypes.number,
-	  height: _react.PropTypes.number
+	  height: _react.PropTypes.number,
+	  fill: _react.PropTypes.string
 	};
 	Icon.defaultProps = {
+	  name: 'grinning',
 	  width: 50,
-	  height: 50
+	  height: 50,
+	  fill: 'currentColor'
 	};
 	exports.default = Icon;
 
