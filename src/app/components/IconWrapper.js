@@ -39,10 +39,10 @@ export default class IconWrapper extends Component {
   }
 
   renderIcons() {
-    return icons.map(icon => {
+    return Object.keys(icons).map(icon => {
       return (
         <div style={this.combinedIconStyles()}>
-          <Icon text={icon.text} icon={icon.path} />
+          <Icon text={icon} path={icons[icon]} />
         </div>
       );
     });

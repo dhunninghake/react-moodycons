@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 
 export default class Icon extends Component {
   static propTypes = {
-    icon:    PropTypes.object.isRequired,
-    text:    PropTypes.string,
+    text:    PropTypes.string.isRequired,
+    path:    PropTypes.string,
     width:   PropTypes.number,
     height:  PropTypes.number
   }
@@ -22,7 +22,7 @@ export default class Icon extends Component {
           viewBox='0 0 25 25'
           fill='currentColor'
           xmlns='http://www.w3.org/2000/svg'>
-          {this.props.icon}
+          <path d={this.props.path}/>
         </svg>
         <h5>{this.props.text}</h5>
       </div>
