@@ -10,7 +10,6 @@
   },
   "author": "Daniel Hunninghake <d@dhunninghake.com> (http://dhunninghake.com/)",
   "license": "MIT",
-  "files": "dist",
   "dependencies": {
     "babel-polyfill": "^6.8.0",
     "babel-runtime": "^6.6.1",
