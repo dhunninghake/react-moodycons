@@ -26,4 +26,17 @@ module.exports = React.createClass({
 - `width` - number e.g. width={100}
 - `height` - number e.g. height={100}
 
+## Accessibility
+Happy to say this module is fully accessible!
+
+Looks something like this:
+```html
+<svg role="img" aria-labelledby="grinning" "...">
+  <title id="grinning">grinning icon</title>
+  <path d="..."></path>
+</svg>
+```
+
+<3
+
 MIT License
