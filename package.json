@@ -4,7 +4,7 @@
   "description": "React svg component for Moodycons",
   "main": "dist/moodycons.js",
   "scripts": {
-    "prebuild": "rimraf moodycons.js",
+    "prebuild": "rimraf dist",
     "build": "babel src --out-dir dist --copy-files",
     "start": "webpack-dev-server --hot --progress --colors"
   },
