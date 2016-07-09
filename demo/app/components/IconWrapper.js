@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import icons from '../../../icons/icons';
+import icons from '../../../src/icons';
 import Icon from './Icon';
 
 const wrapperStyles = {

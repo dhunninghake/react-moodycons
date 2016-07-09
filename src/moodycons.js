@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import icons from '../icons/icons';
+import icons from './icons';
 
 export default class Icon extends Component {
   static propTypes = {

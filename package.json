@@ -1,11 +1,11 @@
 {
   "name": "react-moodycons",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React svg component for Moodycons",
-  "main": "moodycons.js",
+  "main": "dist/moodycons.js",
   "scripts": {
     "prebuild": "rimraf moodycons.js",
-    "build": "babel src --out-file moodycons.js",
+    "build": "babel src --out-dir dist --copy-files",
     "start": "webpack-dev-server --hot --progress --colors"
   },
   "author": "Daniel Hunninghake <d@dhunninghake.com> (http://dhunninghake.com/)",
