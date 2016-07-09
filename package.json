@@ -1,6 +1,6 @@
 {
   "name": "react-moodycons",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React svg component for Moodycons",
   "main": "dist/moodycons.js",
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "author": "Daniel Hunninghake <d@dhunninghake.com> (http://dhunninghake.com/)",
   "license": "MIT",
+  "files": "dist",
   "dependencies": {
     "babel-polyfill": "^6.8.0",
     "babel-runtime": "^6.6.1",
