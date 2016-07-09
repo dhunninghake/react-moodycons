@@ -22,7 +22,7 @@ module.exports = React.createClass({
 
 ## Available props
 - `name` - single word icon name (required)
-- `fill` - color of the icon
+- `fill` - icon color, otherwise it's inherited
 - `width` - number e.g. width={100}
 - `height` - number e.g. height={100}
 

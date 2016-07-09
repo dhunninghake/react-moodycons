@@ -22455,11 +22455,19 @@
 	          _react2.default.createElement(
 	            'svg',
 	            {
+	              role: 'img',
 	              width: this.props.width,
 	              height: this.props.height,
 	              fill: this.props.fill,
 	              viewBox: '0 0 25 25',
+	              'aria-labelledby': this.props.name,
 	              xmlns: 'http://www.w3.org/2000/svg' },
+	            _react2.default.createElement(
+	              'title',
+	              { id: this.props.name },
+	              this.props.name,
+	              ' icon'
+	            ),
 	            _react2.default.createElement('path', { d: _icons2.default[this.props.name] })
 	          ),
 	          _react2.default.createElement(
