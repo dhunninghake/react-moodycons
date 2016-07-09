@@ -1,0 +1,131 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/0.12.7/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.9.3
+3 info using node@v6.2.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/dhunninghake/Sites/react-moodycons',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/dhunninghake/.npm/react-moodycons/1.0.4/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/dhunninghake/.npm correctMkdir not in flight; initializing
+10 info lifecycle react-moodycons@1.0.4~prepublish: react-moodycons@1.0.4
+11 silly lifecycle react-moodycons@1.0.4~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/dhunninghake/.npm/react-moodycons/1.0.4/package.tgz',
+12 verbose tar pack   '/Users/dhunninghake/Sites/react-moodycons' ]
+13 verbose tarball /Users/dhunninghake/.npm/react-moodycons/1.0.4/package.tgz
+14 verbose folder /Users/dhunninghake/Sites/react-moodycons
+15 verbose addLocalTarball adding from inside cache /Users/dhunninghake/.npm/react-moodycons/1.0.4/package.tgz
+16 verbose correctMkdir /Users/dhunninghake/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd react-moodycons@1.0.4
+18 verbose afterAdd /Users/dhunninghake/.npm/react-moodycons/1.0.4/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/dhunninghake/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/dhunninghake/.npm/react-moodycons/1.0.4/package/package.json written
+21 silly publish { name: 'react-moodycons',
+21 silly publish   version: '1.0.4',
+21 silly publish   description: 'React svg component for Moodycons',
+21 silly publish   main: 'dist/moodycons.js',
+21 silly publish   scripts:
+21 silly publish    { prebuild: 'rimraf moodycons.js',
+21 silly publish      build: 'babel src --out-dir dist --copy-files',
+21 silly publish      start: 'webpack-dev-server --hot --progress --colors' },
+21 silly publish   author:
+21 silly publish    { name: 'Daniel Hunninghake',
+21 silly publish      email: 'd@dhunninghake.com',
+21 silly publish      url: 'http://dhunninghake.com/' },
+21 silly publish   license: 'MIT',
+21 silly publish   dependencies:
+21 silly publish    { 'babel-polyfill': '^6.8.0',
+21 silly publish      'babel-runtime': '^6.6.1',
+21 silly publish      react: '^15.0.2',
+21 silly publish      'react-dom': '^15.0.2' },
+21 silly publish   devDependencies:
+21 silly publish    { 'babel-cli': '^6.10.1',
+21 silly publish      'babel-core': '^6.8.0',
+21 silly publish      'babel-loader': '^6.2.4',
+21 silly publish      'babel-plugin-syntax-decorators': '^6.8.0',
+21 silly publish      'babel-plugin-transform-class-properties': '^6.10.2',
+21 silly publish      'babel-plugin-transform-decorators-legacy': '^1.3.4',
+21 silly publish      'babel-plugin-transform-es2015-modules-umd': '^6.8.0',
+21 silly publish      'babel-plugin-transform-runtime': '^6.9.0',
+21 silly publish      'babel-preset-es2015': '^6.6.0',
+21 silly publish      'babel-preset-react': '^6.5.0',
+21 silly publish      'babel-preset-stage-0': '^6.5.0',
+21 silly publish      'html-webpack-plugin': '^2.16.1',
+21 silly publish      rimraf: '^2.5.3',
+21 silly publish      webpack: '^1.13.0',
+21 silly publish      'webpack-dev-server': '^1.14.1' },
+21 silly publish   babel:
+21 silly publish    { presets: [ 'es2015', 'stage-0', 'react' ],
+21 silly publish      plugins: [ 'transform-es2015-modules-umd' ] },
+21 silly publish   readme: '# moodycons\nReact SVG component for emoji mood icons\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'f3b247785ae29ebc398c2d193a5565d347988347',
+21 silly publish   _id: 'react-moodycons@1.0.4',
+21 silly publish   _shasum: 'f22846b9efa1d43c7175d8433085998a2edbb24a',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name react-moodycons
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'react-moodycons',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'react-moodycons',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/react-moodycons
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/dhunninghake/.npm/react-moodycons/1.0.4/package.tgz
+30 verbose request uri https://registry.npmjs.org/react-moodycons
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 8:37:19 PM
+33 verbose request using bearer token for auth
+34 verbose request id a6a2fa949521178b
+35 http request PUT https://registry.npmjs.org/react-moodycons
+36 http 403 https://registry.npmjs.org/react-moodycons
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Sat, 09 Jul 2016 00:35:50 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-jfk1045-JFK',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1468024548.987623,VS0,VE1059',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/dhunninghake/.npm/registry.npmjs.org/react-moodycons on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 1.0.4." : react-moodycons
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid react-moodycons
+43 verbose cwd /Users/dhunninghake/Sites/react-moodycons
+44 error Darwin 15.4.0
+45 error argv "/usr/local/Cellar/node/0.12.7/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.2.1
+47 error npm  v3.9.3
+48 error code E403
+49 error "You cannot publish over the previously published version 1.0.4." : react-moodycons
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
