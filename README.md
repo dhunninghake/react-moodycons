@@ -4,7 +4,9 @@ React SVG component for emoji mood icons
 [See them in action](http://dhunninghake.com/react-moodycons)
 
 ## Getting Started
-```npm i react-moodycons -D```
+```javascript
+npm i react-moodycons -D
+```
 ```javascript
 import React from 'react';
 import Icon from 'react-moodycons';
