@@ -22,14 +22,12 @@ module.exports = React.createClass({
 
 ## Available props
 - `name` - single word icon name (required)
-- `fill` - icon color, otherwise it's inherited
-- `width` - number e.g. width={100}
-- `height` - number e.g. height={100}
+- `fill` - string, inherits from parent by default
+- `width` - number, defaults to 50
+- `height` - number, defaults to 50
 
 ## Accessibility
-Happy to say this module is fully accessible!
-
-Looks something like this:
+Happy to say this module is fully accessible! Output looks something like this:
 ```html
 <svg role="img" aria-labelledby="grinning" "...">
   <title id="grinning">grinning icon</title>

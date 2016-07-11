@@ -32,7 +32,7 @@ export default class Icon extends Component {
           </title>
           <path d={icons[this.props.name]}/>
         </svg>
-        <h5>{this.props.text}</h5>
+        <h5>{this.props.name}</h5>
       </div>
     );
   }
