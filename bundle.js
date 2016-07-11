@@ -22473,7 +22473,7 @@
 	          _react2.default.createElement(
 	            'h5',
 	            null,
-	            this.props.text
+	            this.props.name
 	          )
 	        );
 	      }
