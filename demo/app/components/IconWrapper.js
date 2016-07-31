@@ -5,8 +5,8 @@ import Icon from './Icon';
 export default class IconWrapper extends Component {
 
   renderIcons() {
-    return Object.keys(icons).map(icon => {
-      return (<Icon name={icon} />);
+    return Object.keys(icons).map((icon, i) => {
+      return (<Icon key={i} name={icon} />);
     });
   }
 

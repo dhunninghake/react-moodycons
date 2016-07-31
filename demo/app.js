@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './app/handlers/App';
+import App from './app/routes/App';
 
 render(
   <App />,

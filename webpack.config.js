@@ -22,8 +22,6 @@ module.exports = {
           plugins: [
             'babel-plugin-transform-runtime',
             'babel-plugin-transform-class-properties',
-            'babel-plugin-syntax-decorators',
-            'babel-plugin-transform-decorators-legacy'
           ].map(require.resolve)
         }
       }
