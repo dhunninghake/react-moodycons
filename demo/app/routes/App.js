@@ -7,10 +7,6 @@ import utilityStyles from 'maude';
 
 utilityStyles();
 
-const boxSizing = {
-  boxSizing: 'border-box',
-};
-
 const colors = {
   black:   { color: colorList.black },
   blue:    { color: colorList.blue },
@@ -26,7 +22,7 @@ const colors = {
   red:     { color: colorList.red },
   teal:    { color: colorList.teal },
   yellow:  { color: colorList.yellow },
-  silver:   { color: colorList.silver },
+  silver:  { color: colorList.silver },
 };
 
 export default class App extends Component {
@@ -43,8 +39,8 @@ export default class App extends Component {
 
   render() {
     return (
-      <div style={boxSizing} className={'col11 mx-auto clearfix'}>
-        <Header colors={colors} changeColor={this.changeColor} />
+      <div className={'border-box col11 mx-auto clearfix'}>
+        <Header colors={colors} activeColor={this.state.color} changeColor={this.changeColor} />
         <div className={'left col4'}>
           <Sidebar />
         </div>
