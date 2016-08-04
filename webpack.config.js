@@ -9,22 +9,11 @@ module.exports = {
   },
   module: {
     loaders: [
-      {
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        test: /\.jsx?$/,
-        query: {
-          presets: [
-            'babel-preset-es2015', 
-            'babel-preset-react',
-            'babel-preset-stage-0'
-          ].map(require.resolve),
-          plugins: [
-            'babel-plugin-transform-runtime',
-            'babel-plugin-transform-class-properties',
-          ].map(require.resolve)
-        }
-      }
+      { test: /\.css$/, exclude: /\.useable\.css$/, loader: "style!css" },
+      { test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.md/, loader: 'html!markdown' },
+      { test: /\.json$/, loader: 'json' }
     ]
   },
   plugins: [

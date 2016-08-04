@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import icons from '../../../dist/icons';
+import icons from '../../dist/icons';
 
 export default class Icon extends Component {
   static propTypes = {
@@ -18,7 +18,7 @@ export default class Icon extends Component {
 
   render() {
     return (
-      <div className={'center col3 left'}>
+      <div className={'border-box center col3 left p3'}>
         <svg 
           role='img'
           width={this.props.width} 
@@ -32,7 +32,7 @@ export default class Icon extends Component {
           </title>
           <path d={icons[this.props.name]}/>
         </svg>
-        <h5>{this.props.name}</h5>
+        <h5 className={'m0'}>{this.props.name}</h5>
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import IconWrapper from '../components/IconWrapper';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
+import IconWrapper from './IconWrapper';
+import Sidebar from './Sidebar';
+import Header from './Header';
 import { colorList } from 'maude/dist/defaults';
 import utilityStyles from 'maude';
 
@@ -25,6 +25,10 @@ const colors = {
   silver:  { color: colorList.silver },
 };
 
+const typeface = {
+  fontFamily: "'CalibreRegular', sans-serif"
+};
+
 export default class App extends Component {
 
   constructor(props) {
@@ -39,7 +43,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className={'border-box col11 mx-auto clearfix'}>
+      <div className={'col11 mx-auto clearfix'} style={typeface}>
         <Header colors={colors} activeColor={this.state.color} changeColor={this.changeColor} />
         <div className={'left col4'}>
           <Sidebar />
