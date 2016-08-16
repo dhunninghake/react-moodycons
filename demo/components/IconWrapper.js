@@ -12,9 +12,7 @@ export default class IconWrapper extends Component {
 
   render() {
     return (
-      <div style={this.props.color}>
-        {this.renderIcons()}
-      </div>
+      <div>{this.renderIcons()}</div>
     );
   }
 }

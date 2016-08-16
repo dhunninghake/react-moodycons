@@ -18,7 +18,7 @@ export default class Icon extends Component {
 
   render() {
     return (
-      <div className={'border-box center col3 left p3'}>
+      <div className={'border-box center col6 md-col4 xl-col3 left p3'}>
         <svg 
           role='img'
           width={this.props.width} 
