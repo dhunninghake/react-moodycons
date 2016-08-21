@@ -50,7 +50,7 @@ export default function v(el) {
       return el;
     })(),
     children: Children.map(el.props.children, c => {
-      if (c.props.vStyle) {
+      if (c && c.props.vStyle) {
         const classes   = c.props.className;
         const newClass  = buildRuleset(c);
         const combined  = `${newClass} ${classes}`;

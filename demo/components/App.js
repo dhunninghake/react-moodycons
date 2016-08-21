@@ -3,17 +3,6 @@ import IconWrapper from './IconWrapper';
 import readme from '../../README.md';
 import v from '../v/v';
 
-const linkData = [{ 
-    text: 'Npm', 
-    link: 'https://www.npmjs.com/package/react-moodycons'
-  },{ 
-    text: 'Github', 
-    link: 'https://github.com/dhunninghake/react-moodycons'
-  },{ 
-    text: 'Tweet', 
-    link: 'https://twitter.com/intent/tweet?text=React%20Moodycons&url=http%3A%2F%2Fdhunninghake.com/react-moodycons%2F'
-}];
-
 const themes = [
   { name: 'minimal', color: '#000000', background: '#ffffff' },
   { name: 'retro', color: '#ff8181', background: '#3A3C83' },
@@ -23,7 +12,6 @@ const themes = [
   { name: 'desert', color: '#36363b', background: '#eeb668' },
 ];
 
-
 export default class App extends Component {
 
   constructor(props) {
@@ -32,8 +20,12 @@ export default class App extends Component {
       theme: 'minimal',
       themeNavOpen: false
     };
-    this.changeTheme = this.changeTheme.bind(this);
     this.toggleNav = this.toggleNav.bind(this);
+  }
+
+  closeNav(theme) {
+    this.toggleNav();
+    this.changeTheme(theme);
   }
 
   toggleNav() {
@@ -41,7 +33,7 @@ export default class App extends Component {
   }
 
   changeTheme(theme) {
-    this.setState({ theme: theme });
+    this.setState({ theme: theme.name });
   }
 
   render() {
@@ -50,7 +42,6 @@ export default class App extends Component {
       return themes.filter(t => this.state.theme === t.name)[0];
     })();
 
-    
     const Readme = () => {
       const styles = {
         container: {
@@ -93,7 +84,7 @@ export default class App extends Component {
           backgroundColor: activeTheme.background,
           color: activeTheme.color,
           border: '1px solid currentColor',
-          marginTop: props.list ? '-1px' : '0rem',
+          marginTop: '-1px',
           padding: '.5rem',
           textAlign: 'left',
           cursor: 'pointer',
@@ -139,18 +130,18 @@ export default class App extends Component {
           return (
             <div key={i} 
               vStyle={styles.item}
-              onClick={props.toggleNav}>
+              onClick={this.closeNav.bind(this, theme)}>
               <span vStyle={styles.circle} style={color}></span>
               <span vStyle={styles.name}>{theme.name}</span>
             </div>
           );
         });
         return v(
-          <div>{themeList}</div>
+          <div>{this.state.themeNavOpen && themeList}</div>
         );
       } else {
         return v(
-          <div vStyle={styles.item}>
+          <div vStyle={styles.item} onClick={this.toggleNav}>
             <div vStyle={styles.itemLeft}>
               <span vStyle={styles.circle}></span>
               <span vStyle={styles.name}>{activeTheme.name}</span>
@@ -198,7 +189,7 @@ export default class App extends Component {
       return v(
         <div vStyle={styles.container}>
           <small vStyle={styles.eyelash}>Choose a theme</small>
-          <ThemeItem toggleNav={this.toggleNav} />
+          <ThemeItem />
           <div vStyle={styles.list}>
             <ThemeItem list />
           </div>
@@ -227,6 +218,23 @@ export default class App extends Component {
           }
         }
       };
+      const tw = {
+        root: 'https://twitter.com/intent/tweet',
+        url:  'http://dhunninghake.com/react-moodycons',
+        text: 'React%20Moodycons',
+      };
+      const linkData = [
+        { 
+          text: 'Npm', 
+          link: 'https://www.npmjs.com/package/react-moodycons'
+        },{ 
+          text: 'Github', 
+          link: 'https://github.com/dhunninghake/react-moodycons'
+        },{ 
+          text: 'Tweet', 
+          link: `${tw.root}?text=${tw.text}&url=${tw.url}`
+        }
+      ];
       const links = linkData.map((link, i) => {
         return (
           <a key={i} 
@@ -306,6 +314,7 @@ export default class App extends Component {
         global: {
           fontFamily: "'CalibreRegular', sans-serif",
           backgroundColor: activeTheme.background,
+          boxShadow: `0 0 0 10px ${activeTheme.background}`,
           color: activeTheme.color,
           transition: 'all .4s ease'
         },

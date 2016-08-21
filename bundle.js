@@ -20392,17 +20392,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var linkData = [{
-	  text: 'Npm',
-	  link: 'https://www.npmjs.com/package/react-moodycons'
-	}, {
-	  text: 'Github',
-	  link: 'https://github.com/dhunninghake/react-moodycons'
-	}, {
-	  text: 'Tweet',
-	  link: 'https://twitter.com/intent/tweet?text=React%20Moodycons&url=http%3A%2F%2Fdhunninghake.com/react-moodycons%2F'
-	}];
-
 	var themes = [{ name: 'minimal', color: '#000000', background: '#ffffff' }, { name: 'retro', color: '#ff8181', background: '#3A3C83' }, { name: 'midnight', color: '#1e5897', background: '#001318' }, { name: 'sunburnt', color: '#e41e4a', background: '#fcb515' }, { name: 'peaches', color: '#f7725a', background: '#4d484c' }, { name: 'desert', color: '#36363b', background: '#eeb668' }];
 
 	var App = function (_Component) {
@@ -20417,12 +20406,17 @@
 	      theme: 'minimal',
 	      themeNavOpen: false
 	    };
-	    _this.changeTheme = _this.changeTheme.bind(_this);
 	    _this.toggleNav = _this.toggleNav.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(App, [{
+	    key: 'closeNav',
+	    value: function closeNav(theme) {
+	      this.toggleNav();
+	      this.changeTheme(theme);
+	    }
+	  }, {
 	    key: 'toggleNav',
 	    value: function toggleNav() {
 	      this.setState({ themeNavOpen: !this.state.themeNavOpen });
@@ -20430,7 +20424,7 @@
 	  }, {
 	    key: 'changeTheme',
 	    value: function changeTheme(theme) {
-	      this.setState({ theme: theme });
+	      this.setState({ theme: theme.name });
 	    }
 	  }, {
 	    key: 'render',
@@ -20492,7 +20486,7 @@
 	            backgroundColor: activeTheme.background,
 	            color: activeTheme.color,
 	            border: '1px solid currentColor',
-	            marginTop: props.list ? '-1px' : '0rem',
+	            marginTop: '-1px',
 	            padding: '.5rem',
 	            textAlign: 'left',
 	            cursor: 'pointer',
@@ -20539,7 +20533,7 @@
 	              'div',
 	              { key: i,
 	                vStyle: styles.item,
-	                onClick: props.toggleNav },
+	                onClick: _this2.closeNav.bind(_this2, theme) },
 	              _react2.default.createElement('span', { vStyle: styles.circle, style: color }),
 	              _react2.default.createElement(
 	                'span',
@@ -20551,12 +20545,12 @@
 	          return (0, _v2.default)(_react2.default.createElement(
 	            'div',
 	            null,
-	            themeList
+	            _this2.state.themeNavOpen && themeList
 	          ));
 	        } else {
 	          return (0, _v2.default)(_react2.default.createElement(
 	            'div',
-	            { vStyle: styles.item },
+	            { vStyle: styles.item, onClick: _this2.toggleNav },
 	            _react2.default.createElement(
 	              'div',
 	              { vStyle: styles.itemLeft },
@@ -20619,7 +20613,7 @@
 	            { vStyle: styles.eyelash },
 	            'Choose a theme'
 	          ),
-	          _react2.default.createElement(ThemeItem, { toggleNav: _this2.toggleNav }),
+	          _react2.default.createElement(ThemeItem, null),
 	          _react2.default.createElement(
 	            'div',
 	            { vStyle: styles.list },
@@ -20649,6 +20643,21 @@
 	            }
 	          }
 	        };
+	        var tw = {
+	          root: 'https://twitter.com/intent/tweet',
+	          url: 'http://dhunninghake.com/react-moodycons',
+	          text: 'React%20Moodycons'
+	        };
+	        var linkData = [{
+	          text: 'Npm',
+	          link: 'https://www.npmjs.com/package/react-moodycons'
+	        }, {
+	          text: 'Github',
+	          link: 'https://github.com/dhunninghake/react-moodycons'
+	        }, {
+	          text: 'Tweet',
+	          link: tw.root + '?text=' + tw.text + '&url=' + tw.url
+	        }];
 	        var links = linkData.map(function (link, i) {
 	          return _react2.default.createElement(
 	            'a',
@@ -20727,6 +20736,7 @@
 	          global: {
 	            fontFamily: "'CalibreRegular', sans-serif",
 	            backgroundColor: activeTheme.background,
+	            boxShadow: '0 0 0 10px ' + activeTheme.background,
 	            color: activeTheme.color,
 	            transition: 'all .4s ease'
 	          },
@@ -21136,7 +21146,7 @@
 	      return el;
 	    }(),
 	    children: _react.Children.map(el.props.children, function (c) {
-	      if (c.props.vStyle) {
+	      if (c && c.props.vStyle) {
 	        var classes = c.props.className;
 	        var newClass = buildRuleset(c);
 	        var combined = newClass + ' ' + classes;
@@ -21615,7 +21625,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n}\na {\n  color: currentColor;\n}\n\n.readme ul {\n  padding: 0;\n  margin: 0;\n}\n.readme h2 {\n  margin-top: 3rem;\n  margin-bottom: 0.4rem;\n  font-size: 2rem;\n}\n.readme p {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\n.readme pre {\n  border-left: 3px solid currentColor;\n  padding-left: 0.5rem;\n  padding-top: .2rem;\n  padding-bottom: .2rem;\n}", ""]);
+	exports.push([module.id, "a {\n  color: currentColor;\n}\n\n.readme ul {\n  padding: 0;\n  margin: 0;\n}\n.readme h2 {\n  margin-top: 3rem;\n  margin-bottom: 0.4rem;\n  font-size: 2rem;\n}\n.readme p {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\n.readme pre {\n  border-left: 3px solid currentColor;\n  padding-left: 0.5rem;\n  padding-top: .2rem;\n  padding-bottom: .2rem;\n}", ""]);
 
 	// exports
 
