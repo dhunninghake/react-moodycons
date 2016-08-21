@@ -4,9 +4,7 @@ body {
 a {
   color: currentColor;
 }
-.root {
-  transition: all .4s ease;
-}
+
 .readme ul {
   padding: 0;
   margin: 0;
@@ -25,79 +23,4 @@ a {
   padding-left: 0.5rem;
   padding-top: .2rem;
   padding-bottom: .2rem;
-}
-
-.sidebar {
-  border-top: 1px solid currentColor;
-  bottom: 0;
-  text-align: left;
-  left: 0;
-  padding: 1rem;
-  width: 100%;
-  z-index: 1;
-  transition: background-color .4s ease;
-}
-
-.nav {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
-}
-.nav a {
-  margin: 0 1rem 0 0;
-}
-.picker {
-  display: inline-block;
-  vertical-align: middle;
-}
-.picker-text {
-  display: none;
-}
-
-.theme-nav {
-  bottom: 100%;
-}
-
-@media (min-width: 64em) {
-  .nav {
-    display: block;
-    margin-bottom: 3rem;
-  }
-  .nav a {
-    margin: 0 0 0 1rem;
-  }
-  .picker {
-    display: block;
-  }
-  .picker-text {
-    display: block;
-  }
-  .theme-nav {
-    bottom: auto;
-    top: 100%;
-  }
-  .sidebar {
-    border: none;
-    top: 0;
-    right: 0;
-    left: auto;
-    bottom: auto;
-    padding: 2.5rem 3rem 0 0;
-    text-align: right;
-    width: auto;
-    height: 100%;
-  }
-}
-
-.down-1 {
-  position: relative;
-  top: .1rem;
-}
-.down-2 {
-  position: relative;
-  top: .2rem;
-}
-.down-3 {
-  position: relative;
-  top: .3rem;
 }

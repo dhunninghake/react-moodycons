@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import icons from '../../dist/icons';
+import v from '../v/v';
 
 export default class Icon extends Component {
   static propTypes = {
@@ -17,8 +18,22 @@ export default class Icon extends Component {
   }
 
   render() {
-    return (
-      <div className={'border-box center col6 md-col4 xl-col3 left p3'}>
+    const styles = {
+      wrapper: {
+        boxSizing: 'border-box',
+        textAlign: 'center',
+        float: 'left',
+        padding: '2rem',
+        width: '50%',
+        '@media (min-width: 52em)': { width: '33.3%' },
+        '@media (min-width: 76em)': { width: '25%' }  
+      },
+      text: {
+        margin: '0rem'
+      }
+    };
+    return v(
+      <div vStyle={styles.wrapper}>
         <svg 
           role='img'
           width={this.props.width} 
@@ -32,7 +47,7 @@ export default class Icon extends Component {
           </title>
           <path d={icons[this.props.name]}/>
         </svg>
-        <h5 className={'m0'}>{this.props.name}</h5>
+        <h5 vStyle={styles.text}>{this.props.name}</h5>
       </div>
     );
   }
