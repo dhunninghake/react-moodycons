@@ -1,7 +1,6 @@
-a {
+.readme a {
   color: currentColor;
 }
-
 .readme ul {
   padding: 0;
   margin: 0;

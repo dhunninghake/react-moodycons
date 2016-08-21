@@ -1,16 +1,8 @@
 import React, { Component } from 'react';
 import IconWrapper from './IconWrapper';
 import readme from '../../README.md';
+import { themes } from '../themes';
 import v from '../v/v';
-
-const themes = [
-  { name: 'minimal', color: '#000000', background: '#ffffff' },
-  { name: 'retro', color: '#ff8181', background: '#3A3C83' },
-  { name: 'midnight', color: '#1e5897', background: '#001318' },
-  { name: 'sunburnt', color: '#e41e4a', background: '#fcb515' },
-  { name: 'peaches', color: '#f7725a', background: '#4d484c' },
-  { name: 'desert', color: '#36363b', background: '#eeb668' },
-];
 
 export default class App extends Component {
 
@@ -68,11 +60,18 @@ export default class App extends Component {
         },
         text: {
           paddingBottom: '4rem'
+        },
+        link: {
+          color: 'currentColor',
+          display: 'inline-block',
+          paddingLeft: '2px'
         }
       };
       return v(
         <div vStyle={styles.container}>
-          <p vStyle={styles.text}>Made by <a href='http://dhunninghake.com'>dhunninghake</a></p>
+          <p vStyle={styles.text}>Made by&nbsp;
+            <a vStyle={styles.link} href='http://dhunninghake.com'>dhunninghake</a>
+          </p>
         </div>
       );
     };
@@ -213,6 +212,7 @@ export default class App extends Component {
           display: 'inline-block',
           verticalAlign: 'middle',
           margin: '0 1rem 0 0',
+          color: 'currentColor',
           '@media (min-width: 64rem)': {
             margin: '0 0 0 1rem'
           }
