@@ -98,16 +98,16 @@ export default class App extends Component {
           borderRadius: '50%',
           marginRight: '.5rem',
           position: 'relative',
-          top: '1px',
+          top: '2px',
           width: '1rem',
           height: '1rem'
         },
         name: {
           display: 'inline-block',
           verticalAlign: 'middle',
-          textTransform: 'uppercase',
+          textTransform: 'capitalize',
           position: 'relative',
-          top: '3px'
+          top: '5px'
         },
         itemLeft: {
           width: '75%',
@@ -120,7 +120,7 @@ export default class App extends Component {
           verticalAlign: 'middle',
           textAlign: 'right',
           position: 'relative',
-          top: '2px'
+          top: '4px'
         },
       };
       if (props.list) {
@@ -196,6 +196,7 @@ export default class App extends Component {
       );
     };
 
+    
     const LinkNav = () => {
       const styles = {
         container: {

@@ -1,4 +1,4 @@
-import React, { Children, cloneElement } from 'react';
+import React, { Children, cloneElement, isValidElement } from 'react';
 import { vStyleSheet, camelToHyphen, guid } from './utils';
 
 const buildDeclarations = (styles) => {
@@ -15,8 +15,6 @@ const buildDeclarations = (styles) => {
 };
 
 const buildRuleset = (node) => {
-
-  //set up a unique ID for each node
   const styles = node.props.vStyle;
   const className = `v-${guid()}`;
   const declarations = buildDeclarations(styles);
@@ -38,7 +36,27 @@ const buildRuleset = (node) => {
 
 export default function v(el) {
 
-  return cloneElement(el, { 
+  const cloneChildren = (children) => {
+    return Children.map(children, c => {
+      if (c && c.props && c.props.vStyle) {
+        const classes   = c.props.className;
+        const newClass  = buildRuleset(c);
+        const combined  = `${newClass} ${classes}`;
+        const className = classes ? combined : newClass;
+
+        let childProps = {};
+        if (isValidElement(c)) {
+          childProps = { className: className };
+        }
+
+        childProps.children = cloneChildren(c.props.children);
+        return cloneElement(c, childProps);
+      }
+      return c;
+    })
+  }
+
+  return cloneElement(el, {
     className: (() => {
       if (el.props.vStyle) {
         const classes  = el.props.className;
@@ -49,17 +67,7 @@ export default function v(el) {
       }
       return el;
     })(),
-    children: Children.map(el.props.children, c => {
-      if (c && c.props.vStyle) {
-        const classes   = c.props.className;
-        const newClass  = buildRuleset(c);
-        const combined  = `${newClass} ${classes}`;
-        const className = classes ? combined : newClass;
-        
-        return cloneElement(c, { className: className });
-      }
-      return c;
-    })
+    children: cloneChildren(el.props.children)
   });
 
 }

@@ -20506,16 +20506,16 @@
 	            borderRadius: '50%',
 	            marginRight: '.5rem',
 	            position: 'relative',
-	            top: '1px',
+	            top: '2px',
 	            width: '1rem',
 	            height: '1rem'
 	          },
 	          name: {
 	            display: 'inline-block',
 	            verticalAlign: 'middle',
-	            textTransform: 'uppercase',
+	            textTransform: 'capitalize',
 	            position: 'relative',
-	            top: '3px'
+	            top: '5px'
 	          },
 	          itemLeft: {
 	            width: '75%',
@@ -20528,7 +20528,7 @@
 	            verticalAlign: 'middle',
 	            textAlign: 'right',
 	            position: 'relative',
-	            top: '2px'
+	            top: '4px'
 	          }
 	        };
 	        if (props.list) {
@@ -21117,8 +21117,6 @@
 	};
 
 	var buildRuleset = function buildRuleset(node) {
-
-	  //set up a unique ID for each node
 	  var styles = node.props.vStyle;
 	  var className = 'v-' + (0, _utils.guid)();
 	  var declarations = buildDeclarations(styles);
@@ -21140,6 +21138,26 @@
 
 	function v(el) {
 
+	  var cloneChildren = function cloneChildren(children) {
+	    return _react.Children.map(children, function (c) {
+	      if (c && c.props && c.props.vStyle) {
+	        var classes = c.props.className;
+	        var newClass = buildRuleset(c);
+	        var combined = newClass + ' ' + classes;
+	        var className = classes ? combined : newClass;
+
+	        var childProps = {};
+	        if ((0, _react.isValidElement)(c)) {
+	          childProps = { className: className };
+	        }
+
+	        childProps.children = cloneChildren(c.props.children);
+	        return (0, _react.cloneElement)(c, childProps);
+	      }
+	      return c;
+	    });
+	  };
+
 	  return (0, _react.cloneElement)(el, {
 	    className: function () {
 	      if (el.props.vStyle) {
@@ -21151,17 +21169,7 @@
 	      }
 	      return el;
 	    }(),
-	    children: _react.Children.map(el.props.children, function (c) {
-	      if (c && c.props.vStyle) {
-	        var classes = c.props.className;
-	        var newClass = buildRuleset(c);
-	        var combined = newClass + ' ' + classes;
-	        var className = classes ? combined : newClass;
-
-	        return (0, _react.cloneElement)(c, { className: className });
-	      }
-	      return c;
-	    })
+	    children: cloneChildren(el.props.children)
 	  });
 	}
 
@@ -21209,7 +21217,31 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	var themes = exports.themes = [{ name: 'minimal', color: '#000000', background: '#ffffff' }, { name: 'retro', color: '#ff8181', background: '#3A3C83' }, { name: 'midnight', color: '#1e5897', background: '#001318' }, { name: 'sunburnt', color: '#e41e4a', background: '#fcb515' }, { name: 'peaches', color: '#f7725a', background: '#4d484c' }, { name: 'desert', color: '#36363b', background: '#eeb668' }];
+	var themes = exports.themes = [{
+	  name: 'minimal',
+	  color: '#000000',
+	  background: '#ffffff'
+	}, {
+	  name: 'retro',
+	  color: '#ff8181',
+	  background: '#3A3C83'
+	}, {
+	  name: 'midnight',
+	  color: '#1e5897',
+	  background: '#001318'
+	}, {
+	  name: 'sunburnt',
+	  color: '#e41e4a',
+	  background: '#fcb515'
+	}, {
+	  name: 'peaches',
+	  color: '#f7725a',
+	  background: '#4d484c'
+	}, {
+	  name: 'desert',
+	  color: '#36363b',
+	  background: '#eeb668'
+	}];
 
 /***/ },
 /* 177 */
