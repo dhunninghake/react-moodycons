@@ -34,40 +34,37 @@ const buildRuleset = (node) => {
   return className;
 };
 
-export default function v(el) {
+const cloneChildren = (children) => {
+  return Children.map(children, c => {
+    if (c && c.props && c.props.vStyle) {
+      const classes   = c.props.className;
+      const newClass  = buildRuleset(c);
+      const combined  = `${newClass} ${classes}`;
+      const className = classes ? combined : newClass;
 
-  const cloneChildren = (children) => {
-    return Children.map(children, c => {
-      if (c && c.props && c.props.vStyle) {
-        const classes   = c.props.className;
-        const newClass  = buildRuleset(c);
-        const combined  = `${newClass} ${classes}`;
-        const className = classes ? combined : newClass;
-
-        let childProps = {};
-        if (isValidElement(c)) {
-          childProps = { className: className };
-        }
-
-        childProps.children = cloneChildren(c.props.children);
-        return cloneElement(c, childProps);
+      let childProps = {};
+      if (isValidElement(c)) {
+        childProps = { className: className };
       }
-      return c;
-    })
-  }
 
+      childProps.children = cloneChildren(c.props.children);
+      return cloneElement(c, childProps);
+    }
+    return c;
+  })
+};
+
+export default function v(el) {
   return cloneElement(el, {
     className: (() => {
       if (el.props.vStyle) {
         const classes  = el.props.className;
         const newClass = buildRuleset(el);
         const combined = `${newClass} ${classes}`;
-        
         return classes ? combined : newClass;
       }
       return el;
     })(),
     children: cloneChildren(el.props.children)
   });
-
 }

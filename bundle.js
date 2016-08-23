@@ -21136,35 +21136,33 @@
 	  return className;
 	};
 
-	function v(el) {
+	var cloneChildren = function cloneChildren(children) {
+	  return _react.Children.map(children, function (c) {
+	    if (c && c.props && c.props.vStyle) {
+	      var classes = c.props.className;
+	      var newClass = buildRuleset(c);
+	      var combined = newClass + ' ' + classes;
+	      var className = classes ? combined : newClass;
 
-	  var cloneChildren = function cloneChildren(children) {
-	    return _react.Children.map(children, function (c) {
-	      if (c && c.props && c.props.vStyle) {
-	        var classes = c.props.className;
-	        var newClass = buildRuleset(c);
-	        var combined = newClass + ' ' + classes;
-	        var className = classes ? combined : newClass;
-
-	        var childProps = {};
-	        if ((0, _react.isValidElement)(c)) {
-	          childProps = { className: className };
-	        }
-
-	        childProps.children = cloneChildren(c.props.children);
-	        return (0, _react.cloneElement)(c, childProps);
+	      var childProps = {};
+	      if ((0, _react.isValidElement)(c)) {
+	        childProps = { className: className };
 	      }
-	      return c;
-	    });
-	  };
 
+	      childProps.children = cloneChildren(c.props.children);
+	      return (0, _react.cloneElement)(c, childProps);
+	    }
+	    return c;
+	  });
+	};
+
+	function v(el) {
 	  return (0, _react.cloneElement)(el, {
 	    className: function () {
 	      if (el.props.vStyle) {
 	        var classes = el.props.className;
 	        var newClass = buildRuleset(el);
 	        var combined = newClass + ' ' + classes;
-
 	        return classes ? combined : newClass;
 	      }
 	      return el;
