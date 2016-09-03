@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import icons from '../../dist/icons';
-import v from '../v/v';
+import { icons } from '../data';
+import v from 'vudu';
 
 export default class Icon extends Component {
   static propTypes = {
@@ -18,7 +18,7 @@ export default class Icon extends Component {
   }
 
   render() {
-    const styles = {
+    const styles = v({
       wrapper: {
         boxSizing: 'border-box',
         textAlign: 'center',
@@ -31,9 +31,9 @@ export default class Icon extends Component {
       text: {
         margin: '0rem'
       }
-    };
-    return v(
-      <div vStyle={styles.wrapper}>
+    });
+    return (
+      <div className={styles.wrapper}>
         <svg 
           role='img'
           width={this.props.width} 
@@ -47,7 +47,7 @@ export default class Icon extends Component {
           </title>
           <path d={icons[this.props.name]}/>
         </svg>
-        <h5 vStyle={styles.text}>{this.props.name}</h5>
+        <h5 className={styles.text}>{this.props.name}</h5>
       </div>
     );
   }
