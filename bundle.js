@@ -56,10 +56,11 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _calibre = __webpack_require__(179);
 
-	__webpack_require__(179);
-	__webpack_require__(191);
+	var _calibre2 = _interopRequireDefault(_calibre);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _reactDom.render)(_react2.default.createElement(_App2.default, null), document.getElementById('app'));
 
@@ -21488,7 +21489,7 @@
 	      },
 	      '>> ul': {
 	        padding: '0rem',
-	        maring: '0 rem'
+	        maring: '0rem'
 	      },
 	      '>> h2': {
 	        marginTop: '3rem',
@@ -21510,7 +21511,7 @@
 	  return _react2.default.createElement(
 	    'div',
 	    { className: styles.container },
-	    _react2.default.createElement('div', { className: 'readme', dangerouslySetInnerHTML: { __html: _README2.default } })
+	    _react2.default.createElement('div', { className: styles.readme, dangerouslySetInnerHTML: { __html: _README2.default } })
 	  );
 	};
 
@@ -22194,6 +22195,12 @@
 	          var _rule = s + ' { .' + className + ' { ' + _declarations + ' } }';
 	          _utils.vStyleSheet.insertRule(_rule, _utils.vStyleSheet.rules.length);
 	        }
+	        if (s.startsWith('>>')) {
+	          var _declarations2 = buildDeclarations(styles[s]);
+	          s = s.replace('>> ', '');
+	          var _rule2 = '.' + className + ' ' + s + ' { ' + _declarations2 + ' }';
+	          _utils.vStyleSheet.insertRule(_rule2, _utils.vStyleSheet.rules.length);
+	        }
 	      });
 	    }
 
@@ -22219,6 +22226,8 @@
 	  cacheItem.className = 'v-' + (0, _utils.guid)();
 	  cache.push(cacheItem);
 
+	  console.log(_utils.vStyleSheet);
+
 	  //return an object of classnames
 	  return buildRuleset(cacheItem, true);
 	};
@@ -22237,7 +22246,7 @@
 	};
 
 	var guid = exports.guid = function guid() {
-	  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+	  return Math.random().toString(26).substring(2, 10) + Math.random().toString(26).substring(2, 10);
 	};
 
 	var vStyleSheet = exports.vStyleSheet = function () {
@@ -22652,46 +22661,6 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
-
-
-/***/ },
-/* 191 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(192);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(190)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./style.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./style.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 192 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(181)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".readme a {\n  color: currentColor;\n}\n.readme ul {\n  padding: 0;\n  margin: 0;\n}\n.readme h2 {\n  margin-top: 3rem;\n  margin-bottom: 0.4rem;\n  font-size: 2rem;\n}\n.readme p {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\n.readme pre {\n  border-left: 3px solid currentColor;\n  padding-left: 0.5rem;\n  padding-top: .2rem;\n  padding-bottom: .2rem;\n}", ""]);
-
-	// exports
 
 
 /***/ }

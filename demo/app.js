@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import App from './components/App';
-require('./fonts/calibre.css');
-require('./styles/style.css');
+import fonts from './fonts/calibre.css';
 
 render(
   <App />,

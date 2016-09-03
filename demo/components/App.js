@@ -19,7 +19,7 @@ const Readme = () => {
       },
       '>> ul': {
         padding: '0rem',
-        maring: '0 rem'
+        maring: '0rem'
       },
       '>> h2': {
         marginTop: '3rem',
@@ -40,7 +40,7 @@ const Readme = () => {
   });
   return (
     <div className={styles.container}>
-      <div className={'readme'} dangerouslySetInnerHTML={{__html: readme}}></div>
+      <div className={styles.readme} dangerouslySetInnerHTML={{__html: readme}}></div>
     </div>
   );
 };
