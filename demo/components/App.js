@@ -64,7 +64,7 @@ const Footer = () => {
   });
   return (
     <div className={styles.container}>
-      <p className={styles.text}>Made by&nbsp;
+      <p className={styles.text}>{'Made by '}
         <a className={styles.link} href='http://dhunninghake.com'>dhunninghake</a>
       </p>
     </div>

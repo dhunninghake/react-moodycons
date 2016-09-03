@@ -21537,7 +21537,7 @@
 	    _react2.default.createElement(
 	      'p',
 	      { className: styles.text },
-	      'Made by ',
+	      'Made by ',
 	      _react2.default.createElement(
 	        'a',
 	        { className: styles.link, href: 'http://dhunninghake.com' },
