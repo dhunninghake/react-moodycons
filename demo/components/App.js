@@ -12,6 +12,30 @@ const Readme = () => {
       width: '100%',
       '@media (min-width: 40em)': { width: '50%' },
       '@media (min-width: 64em)': { width: '33.3%' },
+    },
+    readme: {
+      '>> a': {
+        display: 'none'
+      },
+      '>> ul': {
+        padding: '0rem',
+        maring: '0 rem'
+      },
+      '>> h2': {
+        marginTop: '3rem',
+        marginBottom: '0.4rem',
+        fontSize: '2rem'
+      },
+      '>> p': {
+        marginTop: 0,
+        marginBottom: '0.5rem'
+      },
+      '>> pre': {
+        borderLeft: '3px solid currentColor',
+        paddingLeft: '0.5rem',
+        paddingTop: '0.2rem',
+        paddingBottom: '0.2rem'
+      }
     }
   });
   return (
@@ -54,6 +78,7 @@ const ThemeItem = (props) => {
       backgroundColor: props.activeTheme.background,
       color: props.activeTheme.color,
       border: '1px solid currentColor',
+      display: 'inline-block',
       marginTop: '-1px',
       padding: '.5rem',
       textAlign: 'left',
@@ -144,6 +169,7 @@ const Picker = (props) => {
     },
     eyelash: {
       display: 'none',
+      marginBottom: '0.5rem',
       '@media (min-width: 64em)': {
         display: 'block'
       }
@@ -152,6 +178,7 @@ const Picker = (props) => {
       position: 'absolute',
       left: '0rem',
       bottom: '100%',
+      textAlign: 'right',
       '@media (min-width: 64em)': {
         bottom: 'auto',
         top: '100%'
@@ -160,7 +187,7 @@ const Picker = (props) => {
   });
   return (
     <div className={styles.container}>
-      <small className={styles.eyelash}>Choose a theme</small>
+      <small className={styles.eyelash}>{'See them in different color contexts'}</small>
       <ThemeItem {...props} />
       <div className={styles.list}>
         <ThemeItem {...props} list />
@@ -248,10 +275,10 @@ const Nav = (props) => {
         background: 'transparent',
         border: 'none',
         top: '0rem',
-        right: '0rem',
+        right: '4.17%',
         left: 'auto',
         bottom: 'auto',
-        padding: '2.5rem 3rem 0 0',
+        padding: '3rem 0 0 0',
         textAlign: 'right',
         width: 'auto',
         height: '100%'
@@ -307,7 +334,7 @@ export default class App extends Component {
   }
 
   render() {
-    
+
     const activeTheme = (() => {
       return themes.filter(t => this.state.theme === t.name)[0];
     })();
