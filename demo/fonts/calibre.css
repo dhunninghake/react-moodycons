@@ -10,12 +10,12 @@
 }
 
 @font-face {
-  font-family: 'CalibreBold';
-  src: url('./Calibre-Bold.eot');
-  src: url('./Calibre-Bold.eot?#iefix') format('embedded-opentype'),
-       url('./Calibre-Bold.woff2') format('woff2'),
-       url('./Calibre-Bold.woff') format('woff'),
-       url('./Calibre-Bold.ttf') format('truetype');
+  font-family: 'CalibreSemibold';
+  src: url('./Calibre-Semibold.eot');
+  src: url('./Calibre-Semibold.eot?#iefix') format('embedded-opentype'),
+       url('./Calibre-Semibold.woff2') format('woff2'),
+       url('./Calibre-Semibold.woff') format('woff'),
+       url('./Calibre-Semibold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

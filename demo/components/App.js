@@ -345,7 +345,8 @@ export default class App extends Component {
         color: activeTheme.color,
         transition: 'all .4s ease',
         '>> h2': {
-          fontWeight: 'normal'
+          fontWeight: 'normal',
+          fontFamily: "'CalibreSemibold', sans-serif",
         }
       },
       inner: {
