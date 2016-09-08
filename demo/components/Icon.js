@@ -29,7 +29,8 @@ export default class Icon extends Component {
         '@media (min-width: 76em)': { width: '25%' }  
       },
       text: {
-        margin: '0rem'
+        margin: '0rem',
+        fontWeight: 'normal',
       }
     });
     return (
