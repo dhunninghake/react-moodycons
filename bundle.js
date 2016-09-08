@@ -21852,7 +21852,10 @@
 	          backgroundColor: activeTheme.background,
 	          boxShadow: '0 0 0 10px ' + activeTheme.background,
 	          color: activeTheme.color,
-	          transition: 'all .4s ease'
+	          transition: 'all .4s ease',
+	          '>> h2': {
+	            fontWeight: 'normal'
+	          }
 	        },
 	        inner: {
 	          width: '91.66%',
