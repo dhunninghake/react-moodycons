@@ -19,12 +19,12 @@ const Readme = () => {
       },
       '>> ul': {
         padding: '0rem',
-        maring: '0rem'
+        marginTop: '0.3rem'
       },
       '>> h2': {
         marginTop: '3rem',
-        marginBottom: '0.4rem',
-        fontSize: '2rem'
+        marginBottom: '0.3rem',
+        fontSize: '2.2rem'
       },
       '>> p': {
         marginTop: 0,
@@ -33,7 +33,7 @@ const Readme = () => {
       '>> pre': {
         borderLeft: '3px solid currentColor',
         paddingLeft: '0.5rem',
-        paddingTop: '0.2rem',
+        marginTop: '0.3rem',
         paddingBottom: '0.2rem'
       }
     }
@@ -346,8 +346,7 @@ export default class App extends Component {
         transition: 'all .4s ease',
         '>> h2': {
           fontWeight: 'normal',
-          fontFamily: "'CalibreSemibold', sans-serif",
-        }
+        },
       },
       inner: {
         width: '91.66%',
