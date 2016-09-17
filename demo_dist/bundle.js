@@ -21473,6 +21473,17 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	(0, _vudu2.default)({
+	  calibre: {
+	    '@font-face': {
+	      fontFamily: 'CalibreRegular',
+	      sources: [{ path: _fonts.eot, format: 'embedded-opentype' }, { path: _fonts.woff2, format: 'woff2' }, { path: _fonts.woff, format: 'woff' }, { path: _fonts.ttf, format: 'truetype' }],
+	      fontWeight: 'normal',
+	      fontStyle: 'normal'
+	    }
+	  }
+	});
+
 	var Readme = function Readme() {
 	  var styles = (0, _vudu2.default)({
 	    container: {
@@ -21851,12 +21862,6 @@
 	          boxShadow: '0 0 0 10px ' + activeTheme.background,
 	          color: activeTheme.color,
 	          transition: 'all .4s ease',
-	          '@font-face': {
-	            fontFamily: 'CalibreRegular',
-	            sources: [{ path: _fonts.eot, format: 'embedded-opentype' }, { path: _fonts.woff2, format: 'woff2' }, { path: _fonts.woff, format: 'woff' }, { path: _fonts.ttf, format: 'truetype' }],
-	            fontWeight: 'normal',
-	            fontStyle: 'normal'
-	          },
 	          'h2': {
 	            fontWeight: 'normal'
 	          }

@@ -6,6 +6,23 @@ import { ttf, woff, woff2, eot } from '../fonts';
 import v from 'vudu';
 
 
+v({
+  calibre: {
+    '@font-face': {
+      fontFamily: 'CalibreRegular',
+      sources: [
+        { path: eot, format: 'embedded-opentype' },
+        { path: woff2, format: 'woff2' },
+        { path: woff, format: 'woff' },
+        { path: ttf, format: 'truetype' },
+      ],
+      fontWeight: 'normal',
+      fontStyle: 'normal'
+    }
+  }
+});
+
+
 const Readme = () => {
   const styles = v({
     container: {
@@ -345,17 +362,6 @@ export default class App extends Component {
         boxShadow: `0 0 0 10px ${activeTheme.background}`,
         color: activeTheme.color,
         transition: 'all .4s ease',
-        '@font-face': {
-          fontFamily: 'CalibreRegular',
-          sources: [
-            { path: eot, format: 'embedded-opentype' },
-            { path: woff2, format: 'woff2' },
-            { path: woff, format: 'woff' },
-            { path: ttf, format: 'truetype' },
-          ],
-          fontWeight: 'normal',
-          fontStyle: 'normal'
-        },
         'h2': {
           fontWeight: 'normal',
         },
