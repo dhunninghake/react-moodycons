@@ -9,11 +9,22 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, exclude: /\.useable\.css$/, loader: "style!css" },
-      { test: /\.(woff|woff2|eot|ttf)$/, loader: 'url-loader?limit=100000' },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.md/, loader: 'html!markdown' },
-      { test: /\.json$/, loader: 'json' }
+      { 
+        test: /\.js$/, 
+        exclude: /node_modules/, loader: 'babel' 
+      },
+      {
+        test: /\.(ttf|eot|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+        loader: 'file-loader'
+      },
+      { 
+        test: /\.md/, 
+        loader: 'html!markdown' 
+      },
+      { 
+        test: /\.json$/, 
+        loader: 'json' 
+      }
     ]
   },
   plugins: [

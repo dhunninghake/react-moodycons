@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IconWrapper from './IconWrapper';
 import readme from '../../README.md';
 import { themes } from '../data';
+import { ttf, woff, woff2, eot } from '../fonts';
 import v from 'vudu';
 
 
@@ -14,23 +15,23 @@ const Readme = () => {
       '@media (min-width: 64em)': { width: '33.3%' },
     },
     readme: {
-      '>> a': {
+      'a': {
         display: 'none'
       },
-      '>> ul': {
+      'ul': {
         padding: '0rem',
         marginTop: '0.3rem'
       },
-      '>> h2': {
+      'h2': {
         marginTop: '3rem',
         marginBottom: '0.3rem',
         fontSize: '2.2rem'
       },
-      '>> p': {
+      'p': {
         marginTop: 0,
         marginBottom: '0.5rem'
       },
-      '>> pre': {
+      'pre': {
         borderLeft: '3px solid currentColor',
         paddingLeft: '0.5rem',
         marginTop: '0.3rem',
@@ -344,7 +345,18 @@ export default class App extends Component {
         boxShadow: `0 0 0 10px ${activeTheme.background}`,
         color: activeTheme.color,
         transition: 'all .4s ease',
-        '>> h2': {
+        '@font-face': {
+          fontFamily: 'CalibreRegular',
+          sources: [
+            { path: eot, format: 'embedded-opentype' },
+            { path: woff2, format: 'woff2' },
+            { path: woff, format: 'woff' },
+            { path: ttf, format: 'truetype' },
+          ],
+          fontWeight: 'normal',
+          fontStyle: 'normal'
+        },
+        'h2': {
           fontWeight: 'normal',
         },
       },
