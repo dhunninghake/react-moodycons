@@ -353,7 +353,7 @@ export default class App extends Component {
 
   render() {
 
-    const activeTheme = (() => themes.filter(t => this.state.theme === t.name)[0])();
+    const activeTheme = (() => themes.find(t => this.state.theme === t.name))();
 
     const styles = v({
       global: {

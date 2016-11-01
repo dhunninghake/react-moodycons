@@ -21850,9 +21850,9 @@
 	      var _this2 = this;
 
 	      var activeTheme = function () {
-	        return _data.themes.filter(function (t) {
+	        return _data.themes.find(function (t) {
 	          return _this2.state.theme === t.name;
-	        })[0];
+	        });
 	      }();
 
 	      var styles = (0, _vudu2.default)({
