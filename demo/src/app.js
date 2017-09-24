@@ -1,27 +1,9 @@
 import React, { Component } from 'react';
-import IconWrapper from './IconWrapper';
+import { render } from 'react-dom';
 import readme from '../../README.md';
-import { themes } from '../data';
-import { ttf, woff, woff2, eot } from '../fonts';
+import { icons, Moodycon } from '../../src/moodycons';
+import { themes } from './data';
 import v from 'vudu';
-
-
-v({
-  calibre: {
-    '@font-face': {
-      fontFamily: 'CalibreRegular',
-      sources: [
-        { path: eot, format: 'embedded-opentype' },
-        { path: woff2, format: 'woff2' },
-        { path: woff, format: 'woff' },
-        { path: ttf, format: 'truetype' },
-      ],
-      fontWeight: 'normal',
-      fontStyle: 'normal'
-    }
-  }
-});
-
 
 const Readme = () => {
   const styles = v({
@@ -39,9 +21,12 @@ const Readme = () => {
         padding: '0rem',
         marginTop: '0.3rem'
       },
+      'li': {
+        lineHeight: 1.5
+      },
       'h2': {
         marginTop: '3rem',
-        marginBottom: '0.3rem',
+        marginBottom: '0.5rem',
         fontSize: '2.2rem'
       },
       'p': {
@@ -69,7 +54,7 @@ const Footer = () => {
     container: {
       textAlign: 'center',
       paddingTop: '4rem',
-      paddingBottom: '4rem'  
+      paddingBottom: '4rem'
     },
     text: {
       paddingBottom: '4rem'
@@ -98,7 +83,7 @@ const ThemeItem = (props) => {
       border: '1px solid currentColor',
       display: 'inline-block',
       marginTop: '-1px',
-      padding: '.5rem',
+      padding: '.75rem 1rem',
       textAlign: 'left',
       cursor: 'pointer',
       position: 'relative',
@@ -112,8 +97,6 @@ const ThemeItem = (props) => {
       verticalAlign: 'middle',
       borderRadius: '50%',
       marginRight: '.5rem',
-      position: 'relative',
-      top: '2px',
       width: '1rem',
       height: '1rem',
       transition: 'background-color .4s ease'
@@ -121,9 +104,7 @@ const ThemeItem = (props) => {
     name: {
       display: 'inline-block',
       verticalAlign: 'middle',
-      textTransform: 'capitalize',
-      position: 'relative',
-      top: '5px'
+      textTransform: 'capitalize'
     },
     itemLeft: {
       width: '75%',
@@ -135,24 +116,25 @@ const ThemeItem = (props) => {
       display: 'inline-block',
       verticalAlign: 'middle',
       textAlign: 'right',
-      position: 'relative',
-      top: '4px'
     },
   });
   if (props.list) {
-    const themeList = themes.map((theme, i) => {
-      const color = { backgroundColor: theme.color };
-      return (
-        <div key={i} 
-          className={styles.item}
-          onClick={props.closeNav.bind(this, theme)}>
-          <span className={styles.circle} style={color}></span>
-          <span className={styles.name}>{theme.name}</span>
-        </div>
-      );
-    });
     return (
-      <div>{props.themeNavOpen && themeList}</div>
+      <div>
+        {props.themeNavOpen &&
+          themes.map((theme, i) => {
+            const color = { backgroundColor: theme.color };
+            return (
+              <div key={i}
+                className={styles.item}
+                onClick={props.closeNav.bind(this, theme)}>
+                <span className={styles.circle} style={color}></span>
+                <span className={styles.name}>{theme.name}</span>
+              </div>
+            );
+          })
+        }
+      </div>
     );
   } else {
     return (
@@ -205,7 +187,7 @@ const Picker = (props) => {
   });
   return (
     <div className={styles.container}>
-      <small className={styles.eyelash}>{'See them in different color contexts'}</small>
+      <small className={styles.eyelash}>{'Color waves'}</small>
       <ThemeItem {...props} />
       <div className={styles.list}>
         <ThemeItem {...props} list />
@@ -243,22 +225,22 @@ const LinkNav = (props) => {
     text: 'React%20Moodycons',
   };
   const linkData = [
-    { 
-      text: 'Npm', 
+    {
+      text: 'Npm',
       link: 'https://www.npmjs.com/package/react-moodycons'
-    },{ 
-      text: 'Github', 
+    },{
+      text: 'Github',
       link: 'https://github.com/dhunninghake/react-moodycons'
-    },{ 
-      text: 'Tweet', 
+    },{
+      text: 'Tweet',
       link: `${tw.root}?text=${tw.text}&url=${tw.url}`
     }
   ];
   const links = linkData.map((link, i) => {
     return (
-      <a key={i} 
+      <a key={i}
         className={styles.links}
-        href={link.link} 
+        href={link.link}
         target='_blank'>
         {link.text}
       </a>
@@ -311,6 +293,36 @@ const Nav = (props) => {
 };
 
 
+const Icon = ({ width = 50, height = 50, fill, name }) => {
+  const styles = v({
+    wrapper: {
+      boxSizing: 'border-box',
+      textAlign: 'center',
+      float: 'left',
+      padding: '2rem',
+      width: '50%',
+      '@media (min-width: 52em)': { width: '33.3%' },
+      '@media (min-width: 76em)': { width: '25%' }
+    },
+    text: {
+      margin: '0rem',
+      fontWeight: 'normal',
+    }
+  });
+  return (
+    <div className={styles.wrapper}>
+      <Moodycon
+        width={width}
+        height={height}
+        fill={fill}
+        name={name}
+      />
+      <h5 className={styles.text}>{name}</h5>
+    </div>
+  );
+};
+
+
 const Icons = () => {
   const styles = v({
     container: {
@@ -322,17 +334,19 @@ const Icons = () => {
   });
   return (
     <div className={styles.container}>
-      <IconWrapper />
+      {Object.keys(icons).map((icon) => (
+        <Icon key={icon.name} name={icon} />
+      ))}
     </div>
   );
 };
 
 
-export default class App extends Component {
+class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       theme: 'minimal',
       themeNavOpen: false
     };
@@ -376,8 +390,8 @@ export default class App extends Component {
     return (
       <div className={styles.global}>
         <div className={styles.inner}>
-          <Nav 
-            activeTheme={activeTheme} 
+          <Nav
+            activeTheme={activeTheme}
             toggleNav={this.toggleNav.bind(this)}
             closeNav={this.closeNav.bind(this)}
             themeNavOpen={this.state.themeNavOpen}
@@ -390,3 +404,9 @@ export default class App extends Component {
     );
   }
 }
+
+
+render(
+  <App />,
+  document.getElementById('app')
+);
