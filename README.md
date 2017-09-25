@@ -9,12 +9,12 @@ npm i react-moodycons -D
 ```
 ```javascript
 import React from 'react';
-import Icon from 'react-moodycons';
+import { Moodycon } from 'react-moodycons';
 
 module.exports = React.createClass({
   render: function() {
     return (
-      <Icon name='grinning' />
+      <Moodycon name='grinning' />
     );
   }
 });
